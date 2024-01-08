@@ -5,58 +5,6 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class HelloContoller {
-//    @GetMapping("hello")
-//    @ResponseBody
-//    public String hello(){
-//        return " Hello, Spring";
-//    }
-
-//
-//    @ResponseBody
-//    @RequestMapping(value = "helloGoodbye", method= {RequestMethod.GET,RequestMethod.POST})
-//    public String helloGoodbye(){
-//        return " Hello and GoodBye Spring";
-//    }
-//
-//    // handles request of the form /hello?name=LaunchCode
-//    @RequestMapping(value ="hello", method ={RequestMethod.GET, RequestMethod.POST})
-//    @ResponseBody
-//    public String helloWithQueryParam(@RequestParam String name){
-//        return "Hello" + name + "!!!!!!!";
-//    }
-////    handles request of the form /hello/LaunchCode
-//    @GetMapping("hello/{name}/{lastName}")
-//    @ResponseBody
-//    public String helloWithPathParam(@PathVariable String name,@PathVariable String lastName){
-//        return "Hello " + name + " !" + lastName;
-//    }
-//
-//    @GetMapping("venus")
-//    @ResponseBody
-//    public String venusSurface(@RequestParam boolean terrestrial){
-//        if(terrestrial == true){
-//            return "VENUS is rocky";
-//        } else {
-//            return "VENUS is GASeous";
-//        }
-//    }
-//    @GetMapping("venus/{orbiter}")
-//    @ResponseBody
-//    public String venusOrbiter(@PathVariable String orbiter){
-//        return orbiter + " Currently orbits Venus";
-//    }
-//    @GetMapping("form")
-//    @ResponseBody
-//    public String helloForm(){
-//        return "<html>" +
-//                "<body>" +
-//                "<form action='hello' method='POST'>" +
-//                "<input type='text' name = 'name'/>" +
-//                "<input type='submit' value='Greet Me!'/>" +
-//                "</form>" +
-//                "</body>" +
-//                "</html>";
-//    }
 
     @GetMapping("form")
     @ResponseBody
