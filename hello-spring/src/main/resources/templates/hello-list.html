@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>List of name</title>
+    <h3>Planets</h3>
+    <ul>
+       <th:block th:each="name: ${names}">
+           <li th:text="${name}"></li>
+
+       </th:block>
+    </ul>
+    <ul th:if="${numbers.size()}">
+        <th:block th:each="number: ${numbers}">
+            <li th:text="${number}" th:if="${number%2==0 and number>0 }"></li>
+
+
+        </th:block>
+    </ul>
+</head>
+<body>
+
+</body>
+</html>

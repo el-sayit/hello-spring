@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p th:text="${name1}">Default</p>
+    <li th:text = "${'Item name: ' + name1 + ', Price = ' + price}"></li>
+    <ol>
+        <li th:each ="name : ${listOfNames}" th:text="${name}"></li>
+    </ol>
+   <th:block th:each="coffee:${coffeeOptions}" >
+       <h3 th:text="${coffee}">Name</h3>
+       <p th:text="${coffeeDescription}"></p>
+   </th:block>
+
+</body>
+</html>

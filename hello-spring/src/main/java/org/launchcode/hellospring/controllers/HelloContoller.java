@@ -1,29 +1,53 @@
 package org.launchcode.hellospring.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class HelloContoller {
+    @GetMapping("/")
+    public String displayName(Model model){
+        String name = "Mike";
+        double price = 12.99;
+        model.addAttribute("name1",name);
+        model.addAttribute("price", price);
+        ArrayList<String> listOfNames =new ArrayList<>(
+        Arrays.asList("John", "Todd","Bob")
+        );
+        model.addAttribute("listOfNames",listOfNames);
+        ArrayList<String> coffeeNames = new ArrayList<>(
+                Arrays.asList("French Toast", "Arabica", "Espresso")
+        );
+        model.addAttribute("coffeeOptions", coffeeNames);
+        ArrayList<String> description =new ArrayList<>(
+                Arrays.asList("Mild","Robust","Light")
+        );
+        model.addAttribute("coffeeDescription",description);
+        return "index";
+    }
+    @GetMapping("hello-names")
+    public String helloNames(Model model){
+        List<String> names =new ArrayList<>();
+        names.add("Mars");
+        names.add("Jupiter");
+        names.add("saturn");
+        model.addAttribute("names", names);
+        ArrayList<Integer> numbers = new ArrayList<>(
+                Arrays.asList(2,5,-8,-7,-9)
+        );
+        model.addAttribute("numbers", numbers);
+        return "hello-list";
+    }
 
     @GetMapping("form")
-    @ResponseBody
-    public String displayForm() {
-        return
-                "<html>" +
-                        "<body>" +
-                        "<form action='form/add'>" +
-                        "<input type ='text' name='name' placeholder='name'>" +
-                        "<select name='language'>" +
-                        "<option value='english'> English</option>" +
-                        "<option value='french'> French</option>" +
-                        "<option value= 'german'> German </option>" +
-                        "<option value = 'spanish'> Spanish </option>" +
-                        "<option value='russian'> Russian</option>" +
-                        "<input type='submit' value='Greet Me!'>" +
-                        "</form>" +
-                        "</body>" +
-                        "</html>";
+        public String displayForm() {
+        return "form";
+
     }
 
     @RequestMapping(value = "form/add", method = {RequestMethod.GET})
